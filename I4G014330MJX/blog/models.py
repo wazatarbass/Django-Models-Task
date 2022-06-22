@@ -7,7 +7,7 @@ class Post(models.Model):
     Text =  models.TextField(max_length=300)
     Author = models.ForeignKey('auth.User', on_delete=models.CASCADE,)
     Created_date = models.DateTimeField(auto_now_add=True)
-    Published_date =models.DateTimeField()
+    Published_date =models.DateTimeField(default=timezone.now)
     
     def __str__(self):
      return self.Title
